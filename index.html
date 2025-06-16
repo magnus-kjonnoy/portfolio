@@ -2,12 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Magnus Kjønnøy | Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="/icons/forsenE.png" />
+    <script type="module" src="/src/main.jsx"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      const modal = document.getElementById('modal')
+
+      const img = document.getElementsByClassName('image')
+      const modalImg = document.getElementById('img01')
+      const captionText = document.getElementById('caption')
+
+      img.onclick = function() {
+        modal.style.display = 'block'
+        modalImg.src = this.src
+        captionText.innerHTML = this.alt
+      }
+
+      var span = document.getElementsByClassName('close')[0]
+
+      span.onclick = function() {
+        modal.style.display = 'none'
+      }
+    </script>
   </body>
 </html>
