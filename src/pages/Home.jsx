@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 import ContactInfo from '../components/ContactInfo.jsx'
 
 import myPicture from '/images/20250207_152043.jpg'
@@ -9,7 +11,9 @@ import logoFigma from '/logos/figma.png'
 import logoKrita from '/logos/krita.png'
 
 export default function Home() {
-  document.title = 'Magnus Kjønnøy - Portefølje'
+  useEffect(() => {
+    document.title = `Prosjekter - Magnus Kjønnøy - Portefølje`
+  }, [])
 
   return (
     <div className='body'>

@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ImageModal from '../components/ImageModal'
 
 import imageProject1 from '/images/Skjermbilde-Portfolio.png'
@@ -9,7 +9,9 @@ export default function Projects() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentImage, setCurrentImage] = useState(null)
 
-  document.title = 'Prosjekter - Magnus Kjønnøy - Portefølje'
+  useEffect(() => {
+    document.title = `Prosjekter - Magnus Kjønnøy - Portefølje`
+  }, [])
 
   const openModal = (imageSrc, imageAlt) => {
     setCurrentImage({ src: imageSrc, alt: imageAlt })
