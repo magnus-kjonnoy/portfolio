@@ -1,0 +1,97 @@
+.section {
+  font-size: 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  width: fit-content;
+  max-width: var(--main-width-max);
+  height: fit-content;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: 
+    linear-gradient(
+      var(--glass-border-1), 
+      var(--glass-border-2)
+    ) border-box
+  ;
+  mask: 
+    linear-gradient(black, black) border-box,
+    linear-gradient(black, black) padding-box
+  ;
+  mask-composite: subtract;
+}
+
+.container-projects,
+.container-skills {
+  height: fit-content;
+  padding: 0;
+  margin-top: 10px;
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill {
+  background: var(--content-bg);
+  border: var(--content-border);
+  border-radius: var(--content-border-radius);
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & img {
+    width: 100px;
+    height: auto;
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  & p {
+    text-align: center;
+  }
+}
+
+.project {
+  background: var(--content-bg);
+  border: var(--content-border);
+  border-radius: var(--content-border-radius);
+  height: fit-content;
+  padding: 25px;
+
+  & img {
+    border-radius: 10px;
+    width: 50%;
+    height: auto;
+    margin-left: 10px;
+    float: right;
+    object-fit: cover;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(102%);
+    }
+
+    &:active {
+      transform: scale(101%);
+    }
+  }
+}
