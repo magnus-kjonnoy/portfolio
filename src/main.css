@@ -1,5 +1,5 @@
 :root {
-  --white: rgb(244, 244, 244);
+  --white: #f4f4f4;
   --black: rgb(12, 12, 12);
   --red: rgb(238, 45, 62);
   --orange: rgb(238, 90, 62);
@@ -14,10 +14,20 @@
   --google-blue-link: rgb(101, 142, 231);
   --google-blue-link-hover: rgb(126, 159, 230);
 
-  --color-primary: var(--red);
+  --color-primary: var(--blue);
+
+  --linear-gradient-text: linear-gradient(to right, #46bbff, #46ffe0);
+  --linear-gradient-bg: 
+    linear-gradient(
+      to bottom right, 
+      rgba(70, 187, 255, 0.075), 
+      rgba(70, 255, 224, 0.05)
+    )
+  ;
 
   --text: var(--white);
   --color-title: var(--color-primary);
+  --color-title-gradient: var(--linear-gradient-text);
   --text-link: var(--blue-4);
   --text-link-hover: var(--blue-4-hover);
   --text-nav: rgb(238, 45, 62);
@@ -38,16 +48,26 @@
   --bg-container: rgba(0, 0, 0, 0.66);
   --shadow: rgb(0, 0, 0);
 
-  --img-shadow: rgba(255, 255, 255, 0.15) 0px 0px 10px;
+  --img-shadow: rgba(255, 255, 255, 0.25) 0px 0px 10px;
 
-  --main-width-max: 768px;
+  --main-width-max: 896px;
+  --container-padding: 25px;
+  --container-gap: var(--container-padding);
+
+  --nav-bg: rgb(0, 16, 27);
+  --nav-border: rgb(0, 64, 128);
 
   --glass-bg: rgba(48, 32, 28, 0.25);
+  --glass-bg: rgba(28, 43, 48, 0.25);
   --glass-border-1: rgba(81, 62, 62, 0.5);
+  --glass-border-1: rgba(62, 74, 81, 0.5);
   --glass-border-2: rgba(61, 51, 51, 0.5);
+  --glass-border-2: rgba(51, 59, 61, 0.5);
 
   --content-bg: radial-gradient(circle at 33% -750%, rgba(238, 45, 62, 0.5), transparent);
+  --content-bg: radial-gradient(circle at 25% -100%, rgba(45, 177, 238, 0.15), transparent);
   --content-border: rgba(238, 45, 62, 0.25) 1px solid;
+  --content-border: rgba(45, 177, 238, 0.25) 1px solid;
   --content-border-radius: 10px;
   --content-padding: 25px;
 }
@@ -63,45 +83,63 @@
   padding: 0;
   margin: 0;
   transition: 0.1s;
+  cursor: default;
 }
 
 body {
   background: no-repeat fixed top;
   background-size: cover;
   background-blend-mode: overlay;
-  background-image: url(/images/nebula-red-3.jpg);
-  background-color: rgba(0, 0, 0, 0.25);
+  background-image: url(/images/nebula-blue-2.jpg);
+  background-color: rgba(0, 0, 0, 0.5);
+  /* background: rgb(255, 255, 255); */
   z-index: 0;
+  width: 100%;
+  height: 100%;
 }
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .title {
-  margin-top: 10px;
+  outline: red 1px solid;
+  color: var(--color-title);
+  font-weight: 500;
+  width: fit-content;
 }
 
 .title-1 {
+  /* outline: red 1px solid; */
   color: var(--color-title);
   font-size: var(--title-1);
   font-weight: 500;
+  width: fit-content;
 }
 
 .title-2 {
   color: var(--color-title);
   font-size: var(--title-2);
   font-weight: 500;
+  width: fit-content;
 }
 
 .title-3 {
   color: var(--color-title);
   font-size: var(--title-3);
   font-weight: 500;
+  width: fit-content;
 }
 
-.text {
-  margin-top: 5px;
+.title-margin {
+  margin-top: 10px;
+}
+
+.text-gradient {
+  color: transparent !important;
+  background-image: var(--color-title-gradient) !important;
+  background-clip: text !important;
 }
 
 .text-bold {
@@ -110,6 +148,12 @@ a {
 
 .text-center {
   text-align: center;
+  justify-self: center;
+  align-self: center;
+}
+
+.text-margin {
+  margin-top: 5px;
 }
 
 .link {
@@ -160,19 +204,6 @@ a {
   width: 100%;
   height: 1px;
   margin: 20px 0px;
-}
-
-.container-intro {
-
-  & img {
-    box-shadow: var(--img-shadow);
-    border-radius: 20px;
-    height: 100%;
-    width: 250px;
-    margin: 0 0 0 10px;
-    float: right;
-    object-fit: cover;
-  }
 }
 
 .container-contact-info {

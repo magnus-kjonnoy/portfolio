@@ -3,10 +3,10 @@
   background: var(--glass-bg);
   backdrop-filter: blur(5px);
   border-radius: 20px;
-  width: fit-content;
+  width: calc(100% - (33px * 2));
   max-width: var(--main-width-max);
   height: fit-content;
-  padding: 50px;
+  padding: 33px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -34,6 +34,7 @@
 
 .container-projects,
 .container-skills {
+  width: 100%;
   height: fit-content;
   padding: 0;
   margin-top: 10px;
@@ -43,30 +44,155 @@
   justify-content: center;
 }
 
-.skill {
-  background: var(--content-bg);
-  border: var(--content-border);
-  border-radius: var(--content-border-radius);
+/* .container-intro {
+  outline: red 1px solid;
+} */
+
+.text-intro {
+  /* line-height: calc(var(--font-large) * 1.25); */
+
+  & div {
+    /* background: var(--line); */
+    width: calc(100% - 315px);
+    height: 1px;
+    margin: 5px 0;
+  }
+}
+
+.container-pic-info {
+  /* outline: red 1px solid; */
   width: fit-content;
+  /* max-width: 330px; */
   height: fit-content;
-  padding: 10px;
+  margin-left: 10px;
   gap: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  float: right;
+}
+
+.my-picture {
+  box-shadow: var(--img-shadow);
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  /* margin: 0 0 0px 10px; */
+  /* float: right; */
+  object-fit: cover;
+}
+
+.container-info {
+  /* outline: red 1px solid; */
+  width: 100%;
+  height: fit-content;
+  padding: 0px;
+  margin-bottom: 0px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  font-size: var(--font-normal);
+  background: var(--content-bg);
+  /* background: var(--linear-gradient-bg); */
+  border: var(--content-border);
+  border-radius: var(--content-border-radius);
+  width: fit-content;
+  width: calc(100% - (10px * 2));
+  padding: 5px 10px;
+  gap: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+  align-items: center;
 
   & img {
-    width: 100px;
+    width: auto;
+    height: 20px;
+  }
+
+  & a {
+    font-size: var(--font-normal);
+    text-decoration: underline;
+  }
+}
+
+.info-skills {
+  font-size: var(--font-normal);
+  background: var(--content-bg);
+  /* background: var(--linear-gradient-bg); */
+  border: var(--content-border);
+  border-radius: var(--content-border-radius);
+  width: fit-content;
+  width: calc(100% - (15px * 2));
+  padding: 15px;
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  & .skill {
+    & img {
+      width: 48px;
+    }
+  }
+}
+
+.container-skills {
+  background: var(--content-bg);
+  /* background: var(--linear-gradient-bg); */
+  border: var(--content-border);
+  border-radius: var(--content-border-radius);
+  width: calc(100% - (var(--container-padding) * 2));
+  padding: var(--container-padding);
+  gap: var(--container-gap);
+}
+
+.skill {
+  /* outline: red 1px solid; */
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  & img {
+    /* outline: red 1px solid; */
+    width: 64px;
     height: auto;
 
     &:hover {
-      transform: scale(105%);
+      transform: scale(110%);
     }
   }
 
   & p {
-    text-align: center;
+    font-size: var(--font-normal);
+    text-wrap-mode: nowrap;
+    text-shadow: black 2px 1px 2px;
+    /* background: rgba(0, 0, 0, 0.5); */
+    /* background: radial-gradient(rgba(0, 0, 0, 0.25), transparent); */
+    border-radius: 10px;
+    opacity: 0;
+    scale: 0;
+    position: absolute;
+    transition: opacity scale;
+    transform: translateY(calc(32px + (var(--font-normal) / 2)));
+    cursor: default;
+  }
+
+  &:hover p {
+    opacity: 1;
+    scale: 1;
+    transition: 0.2s ease;
   }
 }
 
@@ -74,16 +200,18 @@
   background: var(--content-bg);
   border: var(--content-border);
   border-radius: var(--content-border-radius);
+  width: 100%;
   height: fit-content;
-  padding: 25px;
+  padding: var(--container-padding);
 
   & img {
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     width: 50%;
-    height: auto;
     margin-left: 10px;
     float: right;
     object-fit: cover;
+    aspect-ratio: 4 / 3;
     cursor: pointer;
 
     &:hover {

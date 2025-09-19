@@ -27,8 +27,6 @@
     font-size: 18px;
   }
 
-
-
   .button-cv img {
     height: 25px;
     width: 25px;
@@ -40,7 +38,18 @@
   }
 
   .section {
-    padding: 40px !important;
+    padding: 30px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    margin: 30px;
+    gap: 30px;
+  }
+
+  .section {
+    padding: 25px !important;
   }
 
   .project {
@@ -63,17 +72,6 @@
       order: 3 !important;
     }
   }
-}
-
-@media (max-width: 768px) {
-  .main {
-    margin: 30px;
-    gap: 30px;
-  }
-
-  .section {
-    padding: 30px !important;
-  }
 
   .modal-content {
     width: 95%;
@@ -81,22 +79,8 @@
 }
 
 @media (max-width: 640px) {
-  .container-intro {
-    display: flex;
-    flex-direction: column;
-
-    & img {
-      width: 100%;
-      height: 512px;
-      margin: 0 0 10px 0;
-      order: 1;
-      float: none;
-      display: block;
-    }
-
-    & p {
-      order: 2;
-    }
+  :root {
+    --container-padding: 20px;
   }
 
   .main {
@@ -105,25 +89,64 @@
   }
 
   .section {
-    padding: 25px !important;
+    padding: 20px !important;
+  }
+
+  .container-intro {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+
+    & .title-1 {
+      order: 1;
+      align-self: center;
+    }
+
+    .container-pic-info {
+      width: 100%;
+      margin: 0;
+      order: 2;
+      align-self: center;
+      float: none;
+
+      & .my-picture {
+        height: 400px;
+      }
+
+      & .info {
+        flex-direction: row;
+        justify-content: left;
+      }
+    }
+
+    & .text-intro {
+      order: 3;
+    }
   }
 }
 
-@media (max-width: 512px) {
+@media (max-width: 520px) {
+  :root {
+    --container-padding: 15px;
+  }
 
   .main {
     margin: 20px;
   }
 
   .section {
-    padding: 20px !important;
+    padding: 15px !important;
   }
-}
 
-@media (max-width: 448px) {
+  .container-pic-info {
+    width: 100%;
+  }
 
-  .main {
-    margin: 15px;
+  .skill {
+
+    & img {
+      width: 48px !important;
+    }
   }
 
   .section {
@@ -131,12 +154,11 @@
   }
 }
 
-@media (max-width: 384px) {
+@media (max-width: 448px) {
   .main {
-    margin: 10px;
+    margin: 15px;
   }
+}
 
-  .section {
-    padding: 10px !important;
-  }
+@media (max-width: 384px) {
 }
